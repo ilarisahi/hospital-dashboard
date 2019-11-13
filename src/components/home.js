@@ -1,34 +1,70 @@
-import React from 'react';
-import { LineChart, XAxis, Tooltip, CartesianGrid, Line } from 'recharts';
+import React, { useContext } from 'react';
+import { LineChart, XAxis, YAxis, Tooltip, CartesianGrid,
+    Line, Legend, Label, PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
+import { DataContext } from '../App';
+
+const COLORS = ["#42a5f5", "#29b6f6", "#26c6da", "#26a69a", "#66bb6a",
+"#9ccc65", "#ffca28", "#ffa726", "#ff7043", "#ef5350", "#ec407a", "#ab47bc"];
+
+function pieLabelRenderer(entry) {
+    return Math.ceil(entry.value * 100) + " %";
+}
+
+function pieFormatter(value, name, props) {
+    return Math.ceil(value * 100) + " %";
+}
 
 function Home() {
-    const data = [
-        { name: 'Page A', uv: 1000, pv: 2400, amt: 2400, uvError: [75, 20] },
-        { name: 'Page B', uv: 300, pv: 4567, amt: 2400, uvError: [90, 40] },
-        { name: 'Page C', uv: 280, pv: 1398, amt: 2400, uvError: 40 },
-        { name: 'Page D', uv: 200, pv: 9800, amt: 2400, uvError: 20 },
-        { name: 'Page E', uv: 278, pv: null, amt: 2400, uvError: 28 },
-        { name: 'Page F', uv: 189, pv: 4800, amt: 2400, uvError: [90, 20] },
-        { name: 'Page G', uv: 189, pv: 4800, amt: 2400, uvError: [28, 40] },
-        { name: 'Page H', uv: 189, pv: 4800, amt: 2400, uvError: 28 },
-        { name: 'Page I', uv: 189, pv: 4800, amt: 2400, uvError: 28 },
-        { name: 'Page J', uv: 189, pv: 4800, amt: 2400, uvError: [15, 60] },
-    ];
+    const dataState = useContext(DataContext);
 
     return (
         <div className="dashboard-home">
-            <span className="home-title">Home!</span>
-            <LineChart
-                width={400}
-                height={400}
-                data={data}
-                margin={{ top: 5, right: 20, left: 10, bottom: 5 }}>
-                    <XAxis dataKey="name" />
-                    <Tooltip />
-                    <CartesianGrid stroke="#f5f5f5" />
-                    <Line type="monotone" dataKey="uv" stroke="#ff7300" yAxisId={0} />
-                    <Line type="monotone" dataKey="pv" stroke="#387908" yAxisId={1} />
-            </LineChart>
+            <div className="home-costs">
+                <ResponsiveContainer width="99%">
+                    <PieChart>
+                        <Pie data={dataState.finances.costs} dataKey="value" nameKey="name" fill="#8884d8" label={pieLabelRenderer}>
+                            {
+                                dataState.finances.costs.map(
+                                    (entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                                )
+                            }
+                        </Pie>
+                        <Tooltip formatter={pieFormatter} />
+                        <Legend align="center" />
+                    </PieChart>
+                </ResponsiveContainer>
+            </div>
+            <div className="home-income">
+                <ResponsiveContainer width="99%">
+                    <PieChart>
+                        <Pie data={dataState.finances.income} dataKey="value" nameKey="name" fill="#8884d8" label={pieLabelRenderer}>
+                            {
+                                dataState.finances.income.map(
+                                    (entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                                )
+                            }
+                        </Pie>
+                        <Tooltip formatter={pieFormatter} />
+                        <Legend align="center" />
+                    </PieChart>
+                </ResponsiveContainer>
+            </div>
+            <div className="home-patient-flow">
+                <ResponsiveContainer width="99%">
+                    <LineChart width={400} height={400} data={dataState.flow.patientFlow}>
+                        <XAxis dataKey="name" />
+                        <YAxis>
+                            <Label value="Number of patients" angle={-90} position="insideBottomLeft" offset={20} />
+                        </YAxis>
+                        <Tooltip />
+                        <CartesianGrid stroke="#f5f5f5" />
+                        <Legend align="center" />
+                        <Line name="Entered patients" type="monotone" dataKey="entered" stroke="#42a5f5" yAxisId={0} />
+                        <Line name="Discharged patients" type="monotone" dataKey="discharged" stroke="#26a69a" yAxisId={0} />
+                        <Line name="Returning patients (within 48h)" type="monotone" dataKey="returning" stroke="#ffca28" yAxisId={0} />
+                    </LineChart>
+                </ResponsiveContainer>
+            </div>
         </div>
     );
 }

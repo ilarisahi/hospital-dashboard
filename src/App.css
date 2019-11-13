@@ -7,7 +7,6 @@
     'navbar main';
   grid-template-rows: 50px auto;
   grid-template-columns: 250px auto;
-  background: #f8f9fa;
 }
 
 .App.navbar-hidden {
@@ -100,8 +99,54 @@ button.rounded-circle:active {
   border-left: .25em solid #ffffff;
 }
 
+.dashboard-navbar a.active i {
+  margin-left: -.25em
+}
+
 .navbar-list {
   text-align: start;
+}
+
+.navbar-close {
+  position: absolute;
+  right: 1em;
+  top: 1.4em;
+}
+
+.navbar-close .btn-link {
+  color: #ffffff;
+}
+
+.dashboard-home {
+  padding: 1.5em;
+  display: grid;
+  grid-template-areas:
+    'finances-costs finances-income'
+    'flow-patient-flow flow-patient-flow';
+}
+
+.home-costs {
+  width: 100%;
+  height: 400px;
+  grid-area: finances-costs;
+}
+
+.home-income {
+  width: 100%;
+  height: 400px;
+  grid-area: finances-income;
+}
+
+.home-patient-flow {
+  width: 100%;
+  height: 400px;
+  grid-area: flow-patient-flow;
+}
+
+@media (min-width: 577px) {
+  .navbar-close {
+    display: none;
+  }
 }
 
 @media (max-width: 576px) {
@@ -126,5 +171,12 @@ button.rounded-circle:active {
 
   .navbar-hidden .wrapper-header, .navbar-hidden .wrapper-main {
     display: initial;
+  }
+
+  .dashboard-home {
+    grid-template-areas:
+      'finances-costs'
+      'finances-income'
+      'flow-patient-flow'
   }
 }
