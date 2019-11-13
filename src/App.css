@@ -1,0 +1,130 @@
+.App {
+  height: 100vh;
+  text-align: center;
+  display: grid;
+  grid-template-areas:
+    'navbar header'
+    'navbar main';
+  grid-template-rows: 50px auto;
+  grid-template-columns: 250px auto;
+  background: #f8f9fa;
+}
+
+.App.navbar-hidden {
+  grid-template-areas:
+    'header'
+    'main';
+  grid-template-columns: auto;
+}
+
+.wrapper-header {
+  grid-area: header;
+  background: #ffffff;
+  box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+}
+
+.wrapper-navbar {
+  grid-area: navbar;
+  background: #4e73df;
+}
+
+.navbar-hidden .wrapper-navbar {
+  display: none;
+}
+
+.wrapper-main {
+  grid-area: main;
+}
+
+.dashboard-header {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 1.5em;
+}
+
+.header-right {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.rounded-circle {
+  border-radius: 50%;
+}
+
+button.rounded-circle:hover {
+  background: #eaecf4;
+}
+
+button.rounded-circle:active {
+  background: #dddfeb;
+}
+
+.dropdown-menu .nav-link {
+  padding: .25rem 1.5rem;
+  color: #212529;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.dashboard-navbar {
+  padding: 0.5em 0;
+}
+
+.title-navbar {
+  font-size: 3em;
+  color: #ffffff;
+  margin-bottom: .5em;
+}
+
+.dashboard-navbar a {
+  color: #92b2d4;
+  text-decoration: none;
+  padding: .5em 1.5em;
+}
+
+.dashboard-navbar a:hover {
+  color: #ffffff;
+  background: #ffffff10;
+}
+
+.dashboard-navbar a:active {
+  color: #ffffff;
+  background: #ffffff1f;
+}
+
+.dashboard-navbar a.active {
+  color: #ffffff;
+  border-left: .25em solid #ffffff;
+}
+
+.navbar-list {
+  text-align: start;
+}
+
+@media (max-width: 576px) {
+  .App {
+    grid-template-areas:
+      'navbar';
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+  }
+
+  .App.navbar-hidden {
+    grid-template-areas:
+      'header'
+      'main';
+    grid-template-columns: auto;
+    grid-template-rows: 50px auto;
+  }
+
+  .wrapper-header, .wrapper-main {
+    display: none;
+  }
+
+  .navbar-hidden .wrapper-header, .navbar-hidden .wrapper-main {
+    display: initial;
+  }
+}
