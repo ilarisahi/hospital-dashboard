@@ -61,7 +61,7 @@ function App() {
 
   return (
     <div className={"App " + (navbarVisible ? '' : 'navbar-hidden')}>
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <DataContext.Provider value={dataState}>
           <NavbarContext.Provider value={navbarState}>
             <div className="wrapper-header">

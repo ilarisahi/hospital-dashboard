@@ -29,15 +29,15 @@ function Home() {
                 <div className="finances-title">
                     <h2>Finances</h2>
                 </div>
-                <div className="finances-costs">
-                    <div className="card">
-                        <div className="card-body">
-                            <h6 className="card-subtitle mb-2 text-muted">Costs</h6>
-                            <div className="card-chart-wrapper">
+                <div className="finances-wrapper">
+                    <div className="finances-costs">
+                        <div className="card">
+                            <div className="card-body">
+                                <h6 className="card-subtitle mb-2 text-muted">Costs</h6>
                                 <AutoSizer>
                                     {({ height, width }) => (
                                         <Pie
-                                            height={height}
+                                            height={width}
                                             width={width}
                                             data={dataState.finances.costs}
                                             margin={{ top: 40, right: 40, bottom: 40, left: 40 }}
@@ -59,77 +59,77 @@ function Home() {
                                         />
                                     )}
                                 </AutoSizer>
-                            </div>
-                            <div className="chart-legends">
-                                {
-                                    dataState.finances.costs.map((entry, index) => 
-                                        <span className="legend" key={entry.id}>
-                                            <span
-                                                className="legend-dot"
-                                                style={{background: COLORS[index % COLORS.length]}}>
+                                <div className="chart-legends">
+                                    {
+                                        dataState.finances.costs.map((entry, index) => 
+                                            <span className="legend" key={entry.id}>
+                                                <span
+                                                    className="legend-dot"
+                                                    style={{background: COLORS[index % COLORS.length]}}>
+                                                </span>
+                                                {entry.label}
                                             </span>
-                                            {entry.label}
-                                        </span>
-                                    )
-                                }
+                                        )
+                                    }
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className="finances-income">
-                    <div className="card">
-                        <div className="card-body">
-                            <h6 className="card-subtitle mb-2 text-muted">Income</h6>
-                            <div className="card-chart-wrapper">
-                                <AutoSizer>
-                                    {({ height, width }) => (
-                                        <Pie
-                                            height={height}
-                                            width={width}
-                                            data={dataState.finances.income}
-                                            margin={{ top: 40, right: 40, bottom: 40, left: 40 }}
-                                            colors={COLORS}
-                                            radialLabel={pieLabelRenderer}
-                                            radialLabelsSkipAngle={10}
-                                            radialLabelsTextXOffset={6}
-                                            radialLabelsTextColor="#333333"
-                                            radialLabelsLinkOffset={0}
-                                            radialLabelsLinkDiagonalLength={6}
-                                            radialLabelsLinkHorizontalLength={4}
-                                            radialLabelsLinkStrokeWidth={1}
-                                            radialLabelsLinkColor={{ from: 'color' }}
-                                            enableSlicesLabels={false}
-                                            animate={true}
-                                            motionStiffness={90}
-                                            motionDamping={15}
-                                            tooltip={pieFormatter}
-                                        />
-                                    )}
-                                </AutoSizer>
-                            </div>
-                            <div className="chart-legends">
-                                {
-                                    dataState.finances.income.map((entry, index) => 
-                                        <span className="legend" key={entry.id}>
-                                            <span
-                                                className="legend-dot"
-                                                style={{background: COLORS[index % COLORS.length]}}>
-                                            </span>
-                                            {entry.label}
-                                        </span>
-                                    )
-                                }
+                    <div className="finances-alt-wrapper">
+                        <div className="finances-income">
+                            <div className="card">
+                                <div className="card-body">
+                                    <h6 className="card-subtitle mb-2 text-muted">Income</h6>
+                                    <AutoSizer>
+                                        {({ height, width }) => (
+                                            <Pie
+                                                height={width}
+                                                width={width}
+                                                data={dataState.finances.income}
+                                                margin={{ top: 40, right: 40, bottom: 40, left: 40 }}
+                                                colors={COLORS}
+                                                radialLabel={pieLabelRenderer}
+                                                radialLabelsSkipAngle={10}
+                                                radialLabelsTextXOffset={6}
+                                                radialLabelsTextColor="#333333"
+                                                radialLabelsLinkOffset={0}
+                                                radialLabelsLinkDiagonalLength={6}
+                                                radialLabelsLinkHorizontalLength={4}
+                                                radialLabelsLinkStrokeWidth={1}
+                                                radialLabelsLinkColor={{ from: 'color' }}
+                                                enableSlicesLabels={false}
+                                                animate={true}
+                                                motionStiffness={90}
+                                                motionDamping={15}
+                                                tooltip={pieFormatter}
+                                            />
+                                        )}
+                                    </AutoSizer>
+                                    <div className="chart-legends">
+                                        {
+                                            dataState.finances.income.map((entry, index) => 
+                                                <span className="legend" key={entry.id}>
+                                                    <span
+                                                        className="legend-dot"
+                                                        style={{background: COLORS[index % COLORS.length]}}>
+                                                    </span>
+                                                    {entry.label}
+                                                </span>
+                                            )
+                                        }
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div className="finances-total">
-                    <div className="card">
-                        <div className="card-body">
-                            <h6 className="card-subtitle mb-2 text-muted">Total</h6>
-                            <h5 className="card-title">
-                                {dataState.finances.total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')} €
-                            </h5>
+                        <div className="finances-total">
+                            <div className="card">
+                                <div className="card-body">
+                                    <h6 className="card-subtitle mb-2 text-muted">Total</h6>
+                                    <h5 className="card-title">
+                                        {dataState.finances.total.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')} €
+                                    </h5>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
