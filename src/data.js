@@ -2,61 +2,75 @@ const finances = {
     day: {
         costs: [
             {
-                name: "Infra",
+                id: "infra",
+                label: "Infra",
                 value: .13
             },
             {
-                name: "Medication",
+                id: "medication",
+                label: "Medication",
                 value: .16
             },
             {
-                name: "Care supplies",
+                id: "careSupplies",
+                label: "Care supplies",
                 value: .8
             },
             {
-                name: "Laboratory",
+                id: "laboratory",
+                label: "Laboratory",
                 value: .09
             },
             {
-                name: "Radiology",
+                id: "radiology",
+                label: "Radiology",
                 value: .12
             },
             {
-                name: "Specialty consultations",
+                id: "specialtyConsultations",
+                label: "Specialty consultations",
                 value: .07
             },
             {
-                name: "Personnel",
+                id: "personnel",
+                label: "Personnel",
                 value: .18
             },
             {
-                name: "Medical devices",
+                id: "medicalDevices",
+                label: "Medical devices",
                 value: .03
             },
             {
-                name: "Food services",
+                id: "foodServices",
+                label: "Food services",
                 value: .08
             },
             {
-                name: "Cleaning and laundry",
+                id: "cleaningLaundry",
+                label: "Cleaning and laundry",
                 value: .06
             }
         ],
         income: [
             {
-                name: "Municipality",
+                id: "municipality",
+                label: "Municipality",
                 value: .68
             },
             {
-                name: "Subsidies",
+                id: "subsidies",
+                label: "Subsidies",
                 value: .08
             },
             {
-                name: "Others",
+                id: "others",
+                label: "Others",
                 value: .03
             },
             {
-                name: "Customer",
+                id: "customer",
+                label: "Customer",
                 value: .21
             }
         ],
@@ -152,49 +166,109 @@ const flow = {
     day: {
         patientFlow: [
             {
-                name: "01.01.",
-                entered: 31,
-                discharged: 7,
-                returning: 1
+                id: "entered",
+                label: "Entered patients",
+                data: [
+                    {
+                        x: "01.01.",
+                        y: 31
+                    },
+                    {
+                        x: "02.01.",
+                        y: 37
+                    },
+                    {
+                        x: "03.01.",
+                        y: 32
+                    },
+                    {
+                        x: "04.01.",
+                        y: 35
+                    },
+                    {
+                        x: "05.01.",
+                        y: 40
+                    },
+                    {
+                        x: "06.01.",
+                        y: 34
+                    },
+                    {
+                        x: "07.01.",
+                        y: 31
+                    }
+                ]
             },
             {
-                name: "02.01.",
-                entered: 37,
-                discharged: 5,
-                returning: 0
+                id: "discharged",
+                label: "Discharged patients",
+                data: [
+                    {
+                        x: "01.01.",
+                        y: 7
+                    },
+                    {
+                        x: "02.01.",
+                        y: 5
+                    },
+                    {
+                        x: "03.01.",
+                        y: 10
+                    },
+                    {
+                        x: "04.01.",
+                        y: 3
+                    },
+                    {
+                        x: "05.01.",
+                        y: 2
+                    },
+                    {
+                        x: "06.01.",
+                        y: 8
+                    },
+                    {
+                        x: "07.01.",
+                        y: 6
+                    }
+                ]
             },
             {
-                name: "03.01.",
-                entered: 32,
-                discharged: 10,
-                returning: 2
-            },
-            {
-                name: "04.01.",
-                entered: 35,
-                discharged: 3,
-                returning: 0
-            },
-            {
-                name: "05.01.",
-                entered: 40,
-                discharged: 2,
-                returning: 0
-            },
-            {
-                name: "06.01.",
-                entered: 34,
-                discharged: 8,
-                returning: 1
-            },
-            {
-                name: "07.01.",
-                entered: 31,
-                discharged: 6,
-                returning: 0
+                id: "returning",
+                label: "Patients returning within 48 hours of discharge",
+                data: [
+                    {
+                        x: "01.01.",
+                        y: 1
+                    },
+                    {
+                        x: "02.01.",
+                        y: 0
+                    },
+                    {
+                        x: "03.01.",
+                        y: 2
+                    },
+                    {
+                        x: "04.01.",
+                        y: 0
+                    },
+                    {
+                        x: "05.01.",
+                        y: 0
+                    },
+                    {
+                        x: "06.01.",
+                        y: 1
+                    },
+                    {
+                        x: "07.01.",
+                        y: 0
+                    }
+                ]
             }
         ],
-        averageTreatementDays: 3.5,
+        averageTreatmentDays: 3.5,
         patientClassification: 4
     },
     night: {
@@ -206,7 +280,7 @@ const flow = {
 
 flow.night = {
     patientFlow: flow.day.patientFlow,
-    averageTreatementDays: flow.day.averageTreatementDays,
+    averageTreatmentDays: flow.day.averageTreatmentDays,
     patientClassification: flow.day.patientClassification
 }
 
@@ -232,12 +306,12 @@ const indicators = {
 }
 
 indicators.night = {
-    performance: .9,
+    performance: .5,
     quality: .7,
     satisfactionPersonnel: .98,
     satisfactionPatient: .8,
     patientComplaints: indicators.day.patientComplaints,
-    infections: indicators.day.infections,
+    infections: 0.01,
     errors: indicators.day.errors
 }
 

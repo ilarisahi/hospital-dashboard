@@ -47,6 +47,10 @@
   text-align: right;
 }
 
+.dashboard-header .custom-switch {
+  margin-left: 1.5em;
+}
+
 .rounded-circle {
   border-radius: 50%;
 }
@@ -121,26 +125,252 @@ button.rounded-circle:active {
   padding: 1.5em;
   display: grid;
   grid-template-areas:
-    'finances-costs finances-income'
-    'flow-patient-flow flow-patient-flow';
+    'finances indicators'
+    'resources flow';
+  grid-template-columns: 50% 50%;
 }
 
-.home-costs {
+.chart-legends {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: .85em;
+}
+
+.legend {
+  display: inline-block;
+  margin-right: .5em;
+  text-align: left;
+}
+
+.legend-dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: .25em;
+}
+
+.home-finances {
+  display: grid;
+  grid-area: finances;
+  grid-template-areas:
+    'finances-title finances-title'
+    'finances-costs finances-income'
+    'finances-costs finances-total';
+  grid-template-columns: 50% 50%;
+  grid-template-rows: max-content 400px auto;
+  align-items: start;
+  justify-items: center;
+  padding: 1em;
+  gap: 1em;
+}
+
+.finances-title {
+  grid-area: finances-title;
+  justify-self: left;
+}
+
+.finances-costs {
   width: 100%;
-  height: 400px;
+  height: 100%;
   grid-area: finances-costs;
 }
 
-.home-income {
+.finances-costs .card-body, .finances-income .card-body, .flow-patient-flow .card-body {
   width: 100%;
-  height: 400px;
+  height: 100%;
+  display: table;
+}
+
+.card-chart-wrapper {
+  width: 100%;
+  height: 100%;
+  display: table-row;
+}
+
+.finances-income {
+  width: 100%;
+  height: 100%;
   grid-area: finances-income;
 }
 
-.home-patient-flow {
+.finances-total {
+  grid-area: finances-total;
+  text-align: left;
+}
+
+.finances-costs-title {
+  grid-area: finances-costs-title;
+}
+
+.finances-income-title {
+  grid-area: finances-income-title;
+}
+
+.home-indicators {
+  grid-area: indicators;
+  padding: 1em;
+}
+
+.indicators-title, .flow-title, .resources-title {
+  text-align: left;
+  overflow: auto;
+  margin-bottom: 1em;
+}
+
+.indicators-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-bottom: 1em;
+}
+
+.indicators-performance {
+  width: calc(50% - .5em);
+  margin-right: 1em;
+}
+
+.indicators-quality {
+  width: calc(50% - .5em);
+}
+
+.indicators-quality .card, .indicators-performance .card {
+  display: block !important;
+}
+
+.indicators-other {
+  grid-area: indicators-other;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.indicators-other .card, .flow-indicators .card {
+  margin: 0 1em;
+}
+
+.home-resources {
+  grid-area: resources;
+  padding: 1em;
+}
+
+.home-resources h5 {
+  margin-bottom: 0;
+}
+
+.home-resources i {
+  font-size: 2em;
+}
+
+.home-resources .badge {
+  margin-left: .5em;
+}
+
+.resources-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.resources-wrapper .card {
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+
+.resources-personnel {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.resources-other {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: fit-content;
+  justify-content: center;
+}
+
+.home-flow {
+  grid-area: flow;
+  padding: 1em;
+}
+
+.flow-patient-flow {
   width: 100%;
   height: 400px;
   grid-area: flow-patient-flow;
+}
+
+.flow-indicators {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.indicators-performance .card, .indicators-quality .card, .finances-costs .card, .finances-income .card, .flow-patient-flow .card {
+  width: 100%;
+  height: 100%;
+}
+
+.dashboard-home .card {
+  display: table;
+}
+
+.dashboard-home .mb-2, .home-finances .card-title {
+  margin-bottom: 0;
+}
+
+.dashboard-home .card-subtitle {
+  margin-top: 0;
+}
+
+.dashboard-home .card-title {
+  margin-bottom: 0;
+}
+
+.dashboard-home .card-body {
+  padding: 1em;
+}
+
+@media (max-width: 1200px) {
+  .dashboard-home {
+    padding: 1.5em;
+    display: grid;
+    grid-template-areas:
+      'finances'
+      'indicators'
+      'resources'
+      'flow';
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-finances {
+    grid-template-areas:
+      'finances-title'
+      'finances-costs'
+      'finances-income'
+      'finances-total';
+    grid-template-columns: auto;
+    grid-template-rows: max-content 400px 400px auto;
+  }
+
+  .resources-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .resources-personnel {
+    width: 100%;
+  }
+  
+  .resources-other {
+    width: 100%;
+  }
 }
 
 @media (min-width: 577px) {
@@ -171,12 +401,5 @@ button.rounded-circle:active {
 
   .navbar-hidden .wrapper-header, .navbar-hidden .wrapper-main {
     display: initial;
-  }
-
-  .dashboard-home {
-    grid-template-areas:
-      'finances-costs'
-      'finances-income'
-      'flow-patient-flow'
   }
 }
