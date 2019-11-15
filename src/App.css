@@ -20,15 +20,28 @@
   grid-area: header;
   background: #ffffff;
   box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+  position: fixed;
+  height: 50px;
+  width: calc(100% - 250px);
+  padding: .5em 0;
+  z-index: 1000;
+  right: 0;
 }
 
 .wrapper-navbar {
   grid-area: navbar;
   background: #4e73df;
+  position: fixed;
+  width: 250px;
+  height: 100vh;
 }
 
 .navbar-hidden .wrapper-navbar {
   display: none;
+}
+
+.navbar-hidden .wrapper-header {
+  width: 100vw;
 }
 
 .wrapper-main {
@@ -395,6 +408,10 @@ button.rounded-circle:active {
       'main';
     grid-template-columns: auto;
     grid-template-rows: 50px auto;
+  }
+
+  .wrapper-header, .wrapper-navbar {
+    width: 100vw;
   }
 
   .wrapper-header, .wrapper-main {

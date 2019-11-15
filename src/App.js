@@ -34,7 +34,7 @@ function App() {
 
   var lastWidth = window.innerWidth;
   function resize(initial) {
-    if (initial) {
+    if (initial === true) {
       toggleNavbarHook({hide: window.innerWidth <= 576})
     } else if (lastWidth > 576 && window.innerWidth <= 576) {
       toggleNavbarHook({ hide: true });
