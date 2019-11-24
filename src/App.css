@@ -231,6 +231,9 @@ button.rounded-circle:active {
   margin-bottom: 1em;
 }
 
+.list{
+  text-align: left;
+}
 .indicators-wrapper {
   display: flex;
   flex-wrap: wrap;

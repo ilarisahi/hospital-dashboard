@@ -6,7 +6,7 @@ import Settings from './components/settings';
 import Resources from './components/resources';
 import Header from './components/header';
 import Navbar from './components/navbar';
-import { finances, resources, flow, indicators } from './data';
+import { finances, resources, flow, indicators, personnel } from './data';
 
 const NavbarContext = React.createContext(null);
 const DataContext = React.createContext(null);
@@ -51,7 +51,8 @@ function App() {
     resources: dayShift ? resources.day : resources.night,
     flow: dayShift ? flow.day : flow.night,
     indicators: dayShift ? indicators.day : indicators.night,
-    toggleShift: toggleShiftHook
+    toggleShift: toggleShiftHook,
+    personnel: dayShift ? personnel.day : personnel.night,
   }
 
   const navbarState = {

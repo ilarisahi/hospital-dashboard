@@ -315,4 +315,212 @@ indicators.night = {
     errors: indicators.day.errors
 }
 
-export { finances, resources, flow, indicators };
+
+const personnel = {
+    day: {
+        doctors: [
+            {
+                id: "1",
+                name: "Aku Ankka",
+                phone: "123"
+                
+            },
+                        {
+                id: "2",
+                name: "Mikki Hiiri",
+                phone: "321"
+                
+            },
+            {
+                id: "3",
+                name: "Hessu Hopo",
+                phone: "234"
+                
+            },            
+            {
+                id: "4",
+                name: "Roope Ankka",
+                phone: "432"
+                
+            }
+
+        ],
+        nurses: [
+        	{
+                id: "1",
+                name: "Aku Ankka",
+                phone: "123"
+                
+            },
+                        {
+                id: "2",
+                name: "Mikki Hiiri",
+                phone: "321"
+                
+            },
+            {
+                id: "3",
+                name: "Hessu Hopo",
+                phone: "234"
+                
+            },            
+            {
+                id: "4",
+                name: "Roope Ankka",
+                phone: "432"
+                
+            }],
+        physiotherapists: [
+        	{
+                id: "1",
+                name: "Aku Ankka",
+                phone: "123"
+                
+            },
+                        {
+                id: "2",
+                name: "Mikki Hiiri",
+                phone: "321"
+                
+            },
+            {
+                id: "3",
+                name: "Hessu Hopo",
+                phone: "234"
+                
+            },            
+            {
+                id: "4",
+                name: "Roope Ankka",
+                phone: "432"
+                
+            }],
+        pharmasists: [
+        	{
+                id: "1",
+                name: "Aku Ankka",
+                phone: "123"
+                
+            },
+                        {
+                id: "2",
+                name: "Mikki Hiiri",
+                phone: "321"
+                
+            },
+            {
+                id: "3",
+                name: "Hessu Hopo",
+                phone: "234"
+                
+            },            
+            {
+                id: "4",
+                name: "Roope Ankka",
+                phone: "432"
+                
+            }],
+            others: [
+        	{
+                id: "1",
+                name: "Aku Ankka",
+                phone: "123"
+                
+            },
+                        {
+                id: "2",
+                name: "Mikki Hiiri",
+                phone: "321"
+                
+            },
+            {
+                id: "3",
+                name: "Hessu Hopo",
+                phone: "234"
+                
+            },            
+            {
+                id: "4",
+                name: "Roope Ankka",
+                phone: "432"
+                
+            }],
+    },
+    night: {
+        doctors: [
+            {
+                id: "1",
+                name: "Aku Ankka",
+                phone: "123"
+                
+            },
+                        {
+                id: "2",
+                name: "Mikki Hiiri",
+                phone: "321"
+                
+            }
+
+        ],
+        nurses: [
+        	{
+                id: "1",
+                name: "Aku Ankka",
+                phone: "123"
+                
+            },
+                        {
+                id: "2",
+                name: "Mikki Hiiri",
+                phone: "321"
+                
+            }
+                
+            ],
+        physiotherapists: [
+        	{
+                id: "1",
+                name: "Aku Ankka",
+                phone: "123"
+                
+            },
+                        {
+                id: "2",
+                name: "Mikki Hiiri",
+                phone: "321"
+                
+            },
+		],
+        pharmasists: [
+        	{
+                id: "1",
+                name: "Aku Ankka",
+                phone: "123"
+                
+            },
+                        {
+                id: "2",
+                name: "Mikki Hiiri",
+                phone: "321"
+                
+            },
+            ],
+            others: [
+        	{
+                id: "1",
+                name: "Aku Ankka",
+                phone: "123"
+                
+            },
+                        {
+                id: "2",
+                name: "Mikki Hiiri",
+                phone: "321"
+                
+            },
+            ],
+    }
+}
+
+
+export { finances, resources, flow, indicators, personnel };
