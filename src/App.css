@@ -350,6 +350,50 @@ button.rounded-circle:active {
   padding: 1em;
 }
 
+.dashboard-resources {
+  padding: 1.5em;
+}
+
+.resources-human-wrapper {
+  padding: 1em;
+}
+
+.resources-human-wrapper .resources-personnel {
+  width: initial;
+  cursor: pointer;
+}
+
+.resources-human-wrapper .resources-personnel .card:hover {
+  background: #eeeeee;
+}
+
+.resources-human-wrapper .resources-personnel h5 {
+  margin-bottom: 0;
+}
+
+.resources-human-wrapper .resources-personnel span {
+  position: absolute;
+  margin-right: 1.5em;
+  right: 0;
+}
+
+.resources-human-wrapper .resources-personnel h5:before {
+  display: inline-block;
+  content: '';
+  height: 10px;
+  width: 10px;
+  margin-right: 12px;
+  border-bottom: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: rotate(-45deg);
+  align-self: center;
+}
+
+.resources-human-wrapper .accordion__button[aria-expanded='true'] h5:before,
+.resources-human-wrapper .accordion__button[aria-selected='true'] h5:before {
+  transform: rotate(45deg);
+}
+
 @media (max-width: 1200px) {
   .dashboard-home {
     padding: 1.5em;

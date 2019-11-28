@@ -216,8 +216,8 @@ function Home() {
                             total={dataState.resources.pharmasists.total} />
                         <PersonnelResource
                             name="Others"
-                            inUse={dataState.resources.other.inUse}
-                            total={dataState.resources.other.total} />
+                            inUse={dataState.resources.others.inUse}
+                            total={dataState.resources.others.total} />
                     </div>
                     <div className="resources-other">
                         <IconResource
