@@ -44,3 +44,4 @@ This build the app for production to the `build` folder.
 * [react-gauge-chart](https://github.com/Martin36/react-gauge-chart)
 * [React Router](https://github.com/ReactTraining/react-router)
 * [react virtualized](https://github.com/bvaughn/react-virtualized)
+* [react-accessible-accordion](https://github.com/springload/react-accessible-accordion)

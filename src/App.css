@@ -140,9 +140,23 @@ button.rounded-circle:active {
   padding: 1.5em;
   display: grid;
   grid-template-areas:
+    'datepicker datepicker'
     'finances indicators'
     'resources flow';
   grid-template-columns: 50% 50%;
+}
+
+.home-datepicker {
+  grid-area: datepicker;
+  z-index: 200000;
+  justify-self: center;
+  position: absolute;
+  top: .35em;
+  right: 7em;
+}
+
+.home-datepicker .card {
+  padding: 1.5em;
 }
 
 .chart-legends {
@@ -272,6 +286,11 @@ button.rounded-circle:active {
 
 .home-resources h5 {
   margin-bottom: 0;
+  justify-content: center;
+}
+
+.icon-resource-description {
+  margin-bottom: .5em;
 }
 
 .home-resources i {
@@ -399,6 +418,7 @@ button.rounded-circle:active {
     padding: 1.5em;
     display: grid;
     grid-template-areas:
+      'datepicker'
       'finances'
       'indicators'
       'resources'

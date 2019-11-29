@@ -19,7 +19,10 @@ function IconResource(props) {
 
     return (
         <div className="card">
-            <div className="card-body"> 
+            <div className="card-body">
+                {props.description && (
+                    <span className="icon-resource-description">{props.description}</span>
+                )}
                 <h5 className="d-flex"><i className={iconClass}></i><span className={badgeClass}>{value}</span></h5>
             </div>
         </div>

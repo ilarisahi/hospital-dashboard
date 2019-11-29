@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, useReducer } from 'react';
 import { DataContext } from '../App';
-import GaugeChart from 'react-gauge-chart'
-import { Pie } from '@nivo/pie'
-import { Line } from '@nivo/line'
-import { AutoSizer } from 'react-virtualized'
+import GaugeChart from 'react-gauge-chart';
+import { Pie } from '@nivo/pie';
+import { Line } from '@nivo/line';
+import { AutoSizer } from 'react-virtualized';
 import Indicator from './indicator';
 import PersonnelResource from './personnelResource';
 import IconResource from './iconResource';
@@ -25,6 +25,15 @@ function Home() {
 
     return (
         <div className="dashboard-home">
+            <div className="home-datepicker">
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option>This month</option>
+                    <option>This week</option>
+                    <option>This quarter</option>
+                    <option>This year</option>
+                    <option>Last 5 years</option>
+                </select>
+            </div>
             <div className="home-finances">
                 <div className="finances-title">
                     <h2>Finances</h2>
@@ -236,6 +245,7 @@ function Home() {
                             value={dataState.resources.patients.women} />
                         <IconResource
                             icon="stethoscope"
+                            description="Utilization of medical devices"
                             value={Math.ceil(dataState.resources.devicesUtilization * 100) + " %"} />
                     </div>
                 </div>
