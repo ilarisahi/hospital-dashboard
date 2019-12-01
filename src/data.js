@@ -289,10 +289,10 @@ const indicators = {
         performance: .9,
         quality: .7,
         satisfactionPersonnel: .98,
-        satisfactionPatient: .8,
+        satisfactionPatient: .83,
         patientComplaints: 5,
-        infections: .03,
-        errors: .32
+        infections: .002,
+        errors: .06
     },
     night: {
         performance: 0,
@@ -306,12 +306,12 @@ const indicators = {
 }
 
 indicators.night = {
-    performance: .5,
-    quality: .7,
-    satisfactionPersonnel: .98,
-    satisfactionPatient: .8,
+    performance: .7,
+    quality: .9,
+    satisfactionPersonnel: indicators.day.satisfactionPersonnel,
+    satisfactionPatient: indicators.day.satisfactionPatient,
     patientComplaints: indicators.day.patientComplaints,
-    infections: 0.01,
+    infections: indicators.day.infections,
     errors: indicators.day.errors
 }
 
