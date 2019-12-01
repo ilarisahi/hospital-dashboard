@@ -93,27 +93,27 @@ const resources = {
     day: {
         doctors: {
             inUse: 4,
-            total: 4
+            total: 5
         },
         nurses: {
-            inUse: 4,
-            total: 4
+            inUse: 8,
+            total: 9
         },
         physiotherapists: {
-            inUse: 4,
-            total: 4
+            inUse: 1,
+            total: 2
         },
         pharmasists: {
-            inUse: 4,
-            total: 4
+            inUse: 1,
+            total: 1
         },
         others: {
-            inUse: 4,
-            total: 4
+            inUse: 2,
+            total: 3
         },
         beds: {
-            inUse: 4,
-            total: 4
+            inUse: 31,
+            total: 38
         },
         quarantine: {
             inUse: 4,
@@ -127,36 +127,36 @@ const resources = {
     },
     night: {
         doctors: {
-            inUse: 2,
-            total: 4
+            inUse: 1,
+            total: 1
         },
         nurses: {
-            inUse: 2,
-            total: 4
+            inUse: 3,
+            total: 3
         },
         physiotherapists: {
-            inUse: 2,
-            total: 4
+            inUse: 0,
+            total: 0
         },
         pharmasists: {
-            inUse: 2,
-            total: 4
+            inUse: 0,
+            total: 0
         },
         others: {
-            inUse: 2,
-            total: 4
+            inUse: 1,
+            total: 1
         },
         beds: {
-            inUse: 2,
-            total: 4
+            inUse: 31,
+            total: 38
         },
         quarantine: {
-            inUse: 2,
+            inUse: 4,
             total: 4
         },
         patients: {
-            men: 22,
-            women: 13
+            men: 32,
+            women: 43
         },
         devicesUtilization: .10
     }
@@ -322,110 +322,110 @@ const personnel = {
             {
                 id: "1",
                 name: "Aku Ankka",
-                phone: "123"
+                phone: "0401231231"
             },
             {
                 id: "2",
                 name: "Mikki Hiiri",
-                phone: "321"
+                phone: "0401231231"
             },
             {
                 id: "3",
                 name: "Hessu Hopo",
-                phone: "234"
+                phone: "0401231231"
             },
             {
                 id: "4",
                 name: "Roope Ankka",
-                phone: "432"
-            }
+                phone: "0401231231"
+            },
+            {
+                id:"5",
+                name: "Hannu Hanhi",
+                phone: "0401231231"
+            }            
         ],
         nurses: [
             {
                 id: "1",
                 name: "Aku Ankka",
-                phone: "123"
+                phone: "0401231231"
             },
             {
                 id: "2",
                 name: "Mikki Hiiri",
-                phone: "321"
+                phone: "0401231231"
             },
             {
                 id: "3",
                 name: "Hessu Hopo",
-                phone: "234"
+                phone: "0401231231"
             },
             {
                 id: "4",
                 name: "Roope Ankka",
-                phone: "432"
+                phone: "0401231231"
+            },
+            {
+                id:"5",
+                name: "Hannu Hanhi",
+                phone: "0401231231"
+            },
+            {
+                id:"6",
+                name: "Milla Magia",
+                phone: "0401231231"
+            },
+            {
+                id:"7",
+                name: "Pelle Peloton",
+                phone: "0401231231"
+            },
+            {
+                id:"8",
+                name: "Kroisos Pennonen",
+                phone: "0401231231"
+            },
+            {
+                id:"9",
+                name: "Kulta-Into Pii",
+                phone: "0401231231"
             }
         ],
         physiotherapists: [
             {
                 id: "1",
                 name: "Aku Ankka",
-                phone: "123"
+                phone: "0401231231"
             },
             {
                 id: "2",
                 name: "Mikki Hiiri",
-                phone: "321"
-            },
-            {
-                id: "3",
-                name: "Hessu Hopo",
-                phone: "234"
-            },
-            {
-                id: "4",
-                name: "Roope Ankka",
-                phone: "432"
+                phone: "0401231231"
             }
         ],
         pharmasists: [
             {
                 id: "1",
                 name: "Aku Ankka",
-                phone: "123"
-            },
-            {
-                id: "2",
-                name: "Mikki Hiiri",
-                phone: "321"
-            },
-            {
-                id: "3",
-                name: "Hessu Hopo",
-                phone: "234"
-            },
-            {
-                id: "4",
-                name: "Roope Ankka",
-                phone: "432"
+                phone: "0401231231"
             }
         ],
         others: [
             {
                 id: "1",
                 name: "Aku Ankka",
-                phone: "123"
+                phone: "0401231231"
             },
             {
                 id: "2",
                 name: "Mikki Hiiri",
-                phone: "321"
+                phone: "0401231231"
             },
             {
                 id: "3",
                 name: "Hessu Hopo",
-                phone: "234"
-            },
-            {
-                id: "4",
-                name: "Roope Ankka",
-                phone: "432"
+                phone: "0401231231"
             }
         ],
     },
@@ -434,61 +434,38 @@ const personnel = {
             {
                 id: "1",
                 name: "Aku Ankka",
-                phone: "123"
-            },
-            {
-                id: "2",
-                name: "Mikki Hiiri",
-                phone: "321"
+                phone: "0401231231"
             }
         ],
         nurses: [
             {
                 id: "1",
                 name: "Aku Ankka",
-                phone: "123"
+                phone: "0401231231"
             },
             {
                 id: "2",
                 name: "Mikki Hiiri",
-                phone: "321"
-            }
+                phone: "0401231231"
+            },
+            {
+                id:"3",
+                name: "Milla Magia",
+                phone: "0401231231"
+            }            
         ],
         physiotherapists: [
-            {
-                id: "1",
-                name: "Aku Ankka",
-                phone: "123"
-            },
-            {
-                id: "2",
-                name: "Mikki Hiiri",
-                phone: "321"
-            },
+
         ],
         pharmasists: [
-            {
-                id: "1",
-                name: "Aku Ankka",
-                phone: "123"
-            },
-            {
-                id: "2",
-                name: "Mikki Hiiri",
-                phone: "321"
-            },
+
         ],
         others: [
             {
                 id: "1",
                 name: "Aku Ankka",
-                phone: "123"
-            },
-            {
-                id: "2",
-                name: "Mikki Hiiri",
-                phone: "321"
-            },
+                phone: "0401231231"
+            }
         ],
     }
 }
